@@ -16,34 +16,34 @@ public class _01_Different_Browsers_Initialization {
 		
 		
 		String BrowserName = "Chrome";
-		WebDriver driver = null;
+		WebDriver drivers = null;
 
 		if (BrowserName.equals("Edge")) {
 			
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+			drivers = new EdgeDriver();
 		}
 		
 		else if (BrowserName.equals("Chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			drivers = new ChromeDriver();
 			
 		}
 		
 		else if (BrowserName.equals("Firefox")) 
 		{
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-			
+			drivers = new FirefoxDriver();
+						
 			
 		}
 		
 
-		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/");
-		driver.findElement(By.name("search")).sendKeys("HP");
-		driver.findElement(By.className("input-group-btn")).click();
+		drivers.manage().window().maximize();
+		drivers.get("https://tutorialsninja.com/demo/");
+		drivers.findElement(By.name("search")).sendKeys("HP");
+		drivers.findElement(By.className("input-group-btn")).click();
 		
 	}
 
