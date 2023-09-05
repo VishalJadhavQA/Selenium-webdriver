@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class _02_WebDriver_Commands {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 
 		WebDriverManager.chromedriver().setup();
@@ -64,7 +64,43 @@ public class _02_WebDriver_Commands {
 		String ButtonLabel = driver.findElement(By.cssSelector("input[title='search'][type='Submit']")).getAttribute("value");
 		System.out.println(ButtonLabel);
 
-				
+		
+		WebElement Button2 = driver.findElement(By.id("but2")); //Button
+		
+		//isDisplayed()
+		boolean ButtonStatus2 = Button2.isDisplayed();
+		System.out.println("Button is displayed " + ButtonStatus2);
+		
+		//isEnabled()
+		boolean ButtonEnable = Button2.isEnabled();
+		System.out.println("Button is enabled " + ButtonEnable);
+		
+		//isDisabled()
+		WebElement Button1 = driver.findElement(By.id("but1"));
+		boolean ButtonStatus1 = Button1.isEnabled();
+		if (ButtonStatus1) {									/*True*/				
+			
+			System.out.println("Button is enabled ");
+			
+		} else {												/*False*/
+			
+			System.out.println("Button is disabled ");
+		}
+		
+		
+		//isSelected()
+		boolean Checkbox = driver.findElement(By.id("checkbox1")).isSelected();
+		System.out.println("Button is Selected " + Checkbox);
+		
+		driver.navigate().to("http://selenium143.blogspot.com/");
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		driver.navigate().back();
+		
+		//Submit command
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//form[@class='gsc-search-box']")).submit();
+		
 		driver.quit();
 	}
 
