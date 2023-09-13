@@ -1,5 +1,7 @@
 package Selenium.Webdriver;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -61,11 +63,13 @@ public class _02_WebDriver_Commands {
 		String CurrentURL = driver.getCurrentUrl();
 		System.out.println(CurrentURL);
 		
+		//getAttribute()
 		String ButtonLabel = driver.findElement(By.cssSelector("input[title='search'][type='Submit']")).getAttribute("value");
-		System.out.println(ButtonLabel);
+		System.out.println("Attribute value for button is = " + ButtonLabel);
 
-		
+		//getText()
 		WebElement Button2 = driver.findElement(By.id("but2")); //Button
+		System.out.println("Text value for button is = " + Button2.getText());
 		
 		//isDisplayed()
 		boolean ButtonStatus2 = Button2.isDisplayed();
@@ -92,14 +96,26 @@ public class _02_WebDriver_Commands {
 		boolean Checkbox = driver.findElement(By.id("checkbox1")).isSelected();
 		System.out.println("Button is Selected " + Checkbox);
 		
+		//navigate()
 		driver.navigate().to("http://selenium143.blogspot.com/");
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		driver.navigate().back();
 		
-		//Submit command
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//form[@class='gsc-search-box']")).submit();
+		
+		//getCSSValue()
+		String CSS = driver.findElement(By.id("blogsmenu")).getCssValue("line-height");
+		System.out.println("line-height is = " + CSS);
+		
+		//getSize() of given element
+		Dimension Button3 = driver.findElement(By.id("but2")).getSize();
+		System.out.println("Button height is = " + Button3.height);
+		System.out.println("Button width is = " + Button3.width);
+		
+		
+		//pageLoadTimeout() - Used to change the default time for loading web page
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+		
 		
 		driver.quit();
 	}
