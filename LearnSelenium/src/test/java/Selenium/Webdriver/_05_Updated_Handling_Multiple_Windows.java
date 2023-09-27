@@ -6,7 +6,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class _05_Updated_Handling_Multiple_Windows2 {
+public class _05_Updated_Handling_Multiple_Windows {
 
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
