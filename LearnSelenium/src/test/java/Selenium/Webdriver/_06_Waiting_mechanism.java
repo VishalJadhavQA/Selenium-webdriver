@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,8 +32,7 @@ public class _06_Waiting_mechanism {
 		
 		driver.navigate().back();
 		
-		
-		
+				
 		driver.findElement(By.className("dropbtn")).click();
 		
 		// Explicit Wait - wait only for the specific web element
