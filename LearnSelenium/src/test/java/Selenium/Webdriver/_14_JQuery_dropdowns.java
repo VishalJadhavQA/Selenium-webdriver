@@ -28,10 +28,10 @@ public class _14_JQuery_dropdowns {
 		
 		driver.findElement(By.id("justAnInputBox1")).click();
 		
+		driver.findElement(By.xpath("(//li[@class='ComboTreeItemParent']//span)[15]")).click();
 		
-		(//li[@class='ComboTreeItemParent']//span)[15]
 		
-		
+				
 		
 	}
 
