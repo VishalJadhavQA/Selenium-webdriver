@@ -38,7 +38,7 @@ public class _16_Handling_frames {
 		driver.get("https://blogpendingtasks.blogspot.com/p/switchtoframeusingwebelement.html");
 		
 		WebElement frame = driver.findElement(By.xpath("//iframe[@title='arunmotoori']"));
-		driver.switchTo().frame(frame); //using webelement
+		driver.switchTo().frame(frame);  			//using webelement
 		driver.findElement(By.linkText("Home")).click();
 		
 		

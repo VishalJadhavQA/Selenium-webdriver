@@ -21,6 +21,7 @@ public class _17_Nested_frames {
 		
 		driver.get("https://letcode.in/frame");
 		
+		//two child frames under single parent frame
 		driver.switchTo().frame("firstFr");
 		driver.findElement(By.name("fname")).sendKeys("Test");
 		driver.findElement(By.name("lname")).sendKeys("Progress");
@@ -31,7 +32,12 @@ public class _17_Nested_frames {
 		driver.findElement(By.className("input")).sendKeys("Test@mail.com");
 		
 		
+		
+		
+		
 		driver.switchTo().newWindow(WindowType.TAB);
+		
+		//Child frames under two different parent frame
 		driver.get("https://the-internet.herokuapp.com/nested_frames");
 		
 		//Switch to parent frame - Top
@@ -54,6 +60,7 @@ public class _17_Nested_frames {
 		
 		
 		//Switch back to page level or select first frame on the page
+		
 		driver.switchTo().defaultContent();
 		
 		driver.switchTo().frame("frame-bottom");
