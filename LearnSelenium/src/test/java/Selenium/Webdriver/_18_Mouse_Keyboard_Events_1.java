@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class _18_Mouse_Keyboard_Events {
+public class _18_Mouse_Keyboard_Events_1 {
 
 	public static void main(String[] args) throws InterruptedException {
 		
