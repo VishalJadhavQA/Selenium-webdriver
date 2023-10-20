@@ -12,9 +12,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class _21_Screenshots_Robotclass_ashot {
 
@@ -41,9 +45,14 @@ public class _21_Screenshots_Robotclass_ashot {
 		
 		ImageIO.write(bufferedImage,"png",new File(screenshotPath));
 		
+		/*Taking Screenshot using Ashot*/
+		driver.switchTo().newWindow(WindowType.WINDOW);
 		
+		driver.get("https://tutorialsninja.com/demo/");
 		
-
+		Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+		
+		ImageIO.write(screenshot.getImage(),"PNG",new File (System.getProperty("user.dir")+"//Screenshots//fullscreen.png"));
 
 	}
 
