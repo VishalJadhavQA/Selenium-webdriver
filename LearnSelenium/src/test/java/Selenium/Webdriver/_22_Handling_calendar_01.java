@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class _22_Handling_calendar {
+public class _22_Handling_calendar_01 {
 	
 	
 		static WebDriver driver = null;
@@ -19,7 +19,7 @@ public class _22_Handling_calendar {
 	public static void main(String[] args) {
 		
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
 		driver.get("https://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html");
@@ -28,16 +28,15 @@ public class _22_Handling_calendar {
 		WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ui-datepicker-div")));
 	
-		SelectDateCalender("November", "2025");
+		SelectDateCalender("25","November","2025");
 		
 	}
 	
 	
 	
-	public static void SelectDateCalender(String selectmonth, String selectyear) {
+	public static void SelectDateCalender(String selectday,String selectmonth,String selectyear) {
 		
 		//Explicitly wait for 10 seconds for calender to appear
-		
 		
 		String MonthYear = driver.findElement(By.className("ui-datepicker-title")).getText();
 		
@@ -51,20 +50,23 @@ public class _22_Handling_calendar {
 		
 		while (!(month.equals(selectmonth) && year.equals(selectyear))) {
 			
-			driver.findElement(By.xpath("//a[@title='Next']")).click();
+		driver.findElement(By.xpath("//a[@title='Next']")).click();
 				
-			MonthYear = driver.findElement(By.className("ui-datepicker-title")).getText();
+		MonthYear = driver.findElement(By.className("ui-datepicker-title")).getText();
 							
-			month = MonthYear.split(" ")[0];
-			year = MonthYear.split(" ")[1];
+		month = MonthYear.split(" ")[0];
+		year = MonthYear.split(" ")[1];
 				
-			}
+		}
 			
-			String xapth1 = "//td[@data-handler='selectDay']/a[text()='25']";
-			
-			driver.findElement(By.xpath(xapth1)).click();
+		String xpath1 = "//td[@data-handler='selectDay']/a[text()='"+selectday+"']";
+		
+		System.out.println(xpath1);	
+		
+		driver.findElement(By.xpath(xpath1)).click();
 	
 }
+	
 	
 }
 
