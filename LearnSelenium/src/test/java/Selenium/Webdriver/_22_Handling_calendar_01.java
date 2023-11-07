@@ -25,6 +25,7 @@ public class _22_Handling_calendar_01 {
 		driver.get("https://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html");
 		driver.findElement(By.id("datepicker")).click();
 		
+		//Explicitly wait for 10 seconds for calender to appear
 		WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ui-datepicker-div")));
 	
@@ -36,7 +37,7 @@ public class _22_Handling_calendar_01 {
 	
 	public static void SelectDateCalender(String selectday,String selectmonth,String selectyear) {
 		
-		//Explicitly wait for 10 seconds for calender to appear
+		
 		
 		String MonthYear = driver.findElement(By.className("ui-datepicker-title")).getText();
 		
