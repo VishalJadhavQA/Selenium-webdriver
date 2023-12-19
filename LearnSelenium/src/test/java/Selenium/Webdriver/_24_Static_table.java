@@ -41,6 +41,19 @@ public class _24_Static_table {
 				System.out.print(TData.getText()+ " ");
 				
 			}
+			
+			
+			
+			
+			/* Number of rows in table */ 
+			
+			List<WebElement> rows = driver.findElements(By.xpath("//table[@id=\"table1\"]//tbody/tr"));
+			
+			System.out.println(" ");
+			System.out.println("Number of rows in table are " + rows.size());
+			
+			
+			
 
 	}
 
