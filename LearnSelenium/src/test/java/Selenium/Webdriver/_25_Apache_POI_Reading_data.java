@@ -12,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 
-public class _25_Apache_POI {
+public class _25_Apache_POI_Reading_data {
 
 	public static void main(String[] args) throws IOException {
 		
